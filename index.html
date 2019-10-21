@@ -2,61 +2,135 @@
 <html lang="en">
 
 <head>
-    <title>Shower Presentation Engine</title>
+    <title>Accessibility through the eyes of users</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
     <style>
-        .progress {
-            background-color: var(--color-yellow);
-        }
-
-        .slide code.mark, .slide kbd.mark, .slide samp.mark {
-            color: black;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         .shower {
             --slide-ratio: calc(16 / 9);
-            --color-key: #2196f3;
-            --color-black: white;
-            --color-medium: white;
-            --color-light: rgba(255, 255, 255, 0.5);
+            --main-theme: #28293d;
+            --white: #fafafa;
+            --color-grey: #fafafa;
+            --color-red: #df4576;
+            --color-green: #27e8a7;
+            /* blue: #9dbff8 */
+            --color-yellow: #feed73;
+
+            color: #fafafa;
+        }
+
+        .c-r {
+            color: var(--color-red) !important;
+        }
+
+        .c-g {
+            color: var(--color-green) !important;
+        }
+
+        .c-y {
+            color: var(--color-yellow) !important;
+        }
+
+        .caption {
+            color: var(--main-theme);
         }
 
         .slide {
-            background: var(--color-key);
-            color: white;
+            background: var(--main-theme);
         }
 
-        .slide p.note {
-            font-weight: lighter;
+        .slide:after {
+            background-image: none;
+            background-color: #5b8dee;
+            padding-top: 12px;
+            height: calc(var(--ribbon-size) * 1.5);
         }
 
-        .code-wrap .code-text code {
-            line-height: 1.3;
-            font-size: 22px;
+        .dropdown {
+            width: 300px;
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgb(204, 204, 204);
+            transition: all .5s ease;
+            position: relative;
+            font-size: 14px;
+            color: #474747;
+            text-align: left
         }
 
-        .slide.spaced {
-            padding-top: 20px;
-        }
-
-        .btn {
-            text-decoration: none;
-            color: #fff;
-            background-color: #ffc107;
-            text-align: center;
-            letter-spacing: .5px;
+        .dropdown .select {
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            background: transparent;
             border: none;
-            border-radius: 0;
-            padding: 5px 10px;
-            text-transform: uppercase;
-            margin: 5px 5px 5px 0;
-            font-weight: bold;
+            box-shadow: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown .select>i {
+            font-size: 13px;
+            color: #888;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            float: right;
+            line-height: 20px
+        }
+
+        .dropdown:hover {
+            box-shadow: 0 0 4px rgb(204, 204, 204)
+        }
+
+        .dropdown:active {
+            background-color: #f8f8f8
+        }
+
+        .dropdown.active:hover,
+        .dropdown.active {
+            box-shadow: 0 0 4px rgb(204, 204, 204);
+            border-radius: 5px 5px 0 0;
+            background-color: #f8f8f8
+        }
+
+        .dropdown.active .select>i {
+            transform: rotate(-90deg)
+        }
+
+        .dropdown .dropdown-menu {
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            left: 0;
+            margin-top: 1px;
+            box-shadow: 0 1px 2px rgb(204, 204, 204);
+            border-radius: 0 1px 5px 5px;
+            overflow: hidden;
+            display: none;
+            max-height: 144px;
+            overflow-y: auto;
+            z-index: 9
+        }
+
+        .dropdown .dropdown-menu li {
+            padding: 10px;
+            transition: all .2s ease-in-out;
+            cursor: pointer
+        }
+
+        .dropdown .dropdown-menu {
+            padding: 0;
+            list-style: none
+        }
+
+        .dropdown .dropdown-menu li:hover {
+            background-color: #f2f2f2
+        }
+
+        .dropdown .dropdown-menu li:active {
+            background-color: #e2e2e2
         }
     </style>
 </head>
@@ -64,17 +138,17 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>Shower Presentation Engine</h1>
-        <p>Yours Truly, Famous Inc.</p>
+        <h1>Accessibility through the eyes of users</h1>
+        <p>Andrii Shtadler</p>
     </header>
 
     <section class="slide" id="cover">
-        <h2>Shower Presentation Engine</h2>
-        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+        <h2>Accessibility through the eyes of users</h2>
+        <p>Are you a friendly developer?</p>
         <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+            <img class="place bottom right" src="pictures/cover.png" alt="Hands on the orange typewriter in a park">
             <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+                <a href="https://www.facebook.com/profile.php?id=100004283014454">©Andrii Shtadler</a>
             </figcaption>
         </figure>
         <style>
@@ -100,17 +174,55 @@
     </section>
 
     <section class="slide">
-        <h2>Shower key features</h2>
+        <h2>Why do customer need a11y?</h2>
         <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
+            <li class="next">Laws? eg (ADA in US)
+                <span class="next">- <b class="c-r">5,592</b> ADA lawsuits filed in US from Jan 1 to June 30</span>
+                <br>
+                <span class="next">steep fines of up to <b class="c-y">$150,000</b></span>
+            </li>
+            <li class="next">
+                California - place to make money
+                <span class="next"> - <b class="c-y">$4000 for each incident of discrimination</b></span>
+            </li>
+            <li class="next">Money?
+                <span class="next">- <b class="c-r">10% (750 mln)</b> global and <b class="c-r">26% (60 mln) in the
+                        US</b></span>
+            </li>
+            <li class="next">Hype and certificates - some marketing tricks</li>
         </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+    </section>
+    <section class="slide">
+        <h2>How?</h2>
+        https://adascan.app/
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink" style="padding-left: 75px; margin-top: -100px;"><small style="font-size: 50%"
+                class="next">ANGRY</small> <br> Developer</h2>
+
+        <img src="pictures/angry-dev.png" alt="Angry dev" class="place bottom left">
     </section>
 
+    <section class="slide">
+        <h2 class="shout shrink" style="padding-left: 75px; margin-top: -25px;">User</h2>
+        <img style="left: 35px; bottom: 45px; width: 32%" src="pictures/user.png" alt="Angry dev"
+            class="place bottom left">
+    </section>
+
+    <section class="slide">
+        <h2>Simple component</h2>
+        <div class="dropdown">
+            <button class="select">
+                <span>Select Gender</span>
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <input type="hidden" name="gender">
+            <ul class="dropdown-menu">
+                <li id="male">Male</li>
+                <li id="female">Female</li>
+            </ul>
+        </div>
+    </section>
     <section class="slide">
         <h2>Plain text on your slides</h2>
         <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
@@ -258,13 +370,33 @@
         </style>
     </section>
 
-    <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
-
     <div class="progress"></div>
 
     <script src="node_modules/shower-core/shower.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $('.dropdown').click(function () {
+            $(this).attr('tabindex', 1).focus();
+            $(this).toggleClass('active');
+            $(this).find('.dropdown-menu').slideToggle(300);
+        });
+        $('.dropdown').focusout(function () {
+            $(this).removeClass('active');
+            $(this).find('.dropdown-menu').slideUp(300);
+        });
+        $('.dropdown .dropdown-menu li').click(function () {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+        });
+        /*End Dropdown Menu*/
+
+
+        $('.dropdown-menu li').click(function () {
+            var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+                msg = '<span class="msg">Hidden input value: ';
+            $('.msg').html(msg + input + '</span>');
+        }); </script>
     <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
 
 </body>
