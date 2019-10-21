@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Shower Presentation Engine</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
     <style>
+        .progress {
+            background-color: var(--color-yellow);
+        }
+
+        .slide code.mark, .slide kbd.mark, .slide samp.mark {
+            color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         .shower {
             --slide-ratio: calc(16 / 9);
+            --color-key: #2196f3;
+            --color-black: white;
+            --color-medium: white;
+            --color-light: rgba(255, 255, 255, 0.5);
+        }
+
+        .slide {
+            background: var(--color-key);
+            color: white;
+        }
+
+        .slide p.note {
+            font-weight: lighter;
+        }
+
+        .code-wrap .code-text code {
+            line-height: 1.3;
+            font-size: 22px;
+        }
+
+        .slide.spaced {
+            padding-top: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ffc107;
+            text-align: center;
+            letter-spacing: .5px;
+            border: none;
+            border-radius: 0;
+            padding: 5px 10px;
+            text-transform: uppercase;
+            margin: 5px 5px 5px 0;
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body class="shower list">
 
     <header class="caption">
@@ -63,14 +113,21 @@
 
     <section class="slide">
         <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
+            laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
+            reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
+        </p>
     </section>
 
     <section class="slide">
         <h2>Two columns if you like</h2>
         <div class="columns two">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
         </div>
     </section>
 
@@ -94,7 +151,11 @@
         <h2>Serious citations</h2>
         <figure>
             <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia.</p>
             </blockquote>
             <figcaption>Marcus Tullius Cicero</figcaption>
         </figure>
@@ -116,36 +177,36 @@
     <section class="slide">
         <h2>Even tables</h2>
         <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
+            <tr>
+                <th scope="col">Locavore</th>
+                <th>Umami</th>
+                <th>Helvetica</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <th scope="row">Fingerstache</th>
+                <td>Kale</td>
+                <td>Chips</td>
+                <td>Keytar</td>
+            </tr>
+            <tr>
+                <th scope="row">Sriracha</th>
+                <td>Gluten-free</td>
+                <td>Ennui</td>
+                <td>Keffiyeh</td>
+            </tr>
+            <tr>
+                <th scope="row">Thundercats</th>
+                <td>Jean</td>
+                <td>Shorts</td>
+                <td>Biodiesel</td>
+            </tr>
+            <tr>
+                <th scope="row">Terry</th>
+                <td>Richardson</td>
+                <td>Swag</td>
+                <td>Blog</td>
+            </tr>
         </table>
         <p>It’s good to have information organized.</p>
     </section>
@@ -207,4 +268,5 @@
     <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
 
 </body>
+
 </html>
