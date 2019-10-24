@@ -9,7 +9,7 @@
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
-            --main-theme: #28293d;
+            --main-theme: #2a2d3e;
             --white: #fafafa;
             --color-grey: #fafafa;
             --color-red: #df4576;
@@ -195,78 +195,97 @@
         </ol>
     </section>
     <section class="slide">
+        <img src="pictures/Total-Lawsuits-2019.png" alt="Total-Lawsuits-2019" style="width: 65%;" class="cover">
+    </section>
+    <section class="slide">
         <h2>How?</h2>
         https://adascan.app/
     </section>
 
     <section class="slide">
         <h2>Simple component - basket</h2>
-        <div class="component-container">
+        <style>
+            .component-container {
+                display: flex;
+                align-items: baseline;
+            }
+            .component-buttons {
+                display: flex;
+            }
+            .awesome-btn {
+                width: 150px;
+                height: 80px;
+                border: none;
+                border-radius: none;
+                color: white;
+                font: bold;
+                font-size: 55px;
+                text-align: center;
+                line-height: 80px;
+                cursor: pointer;
+            }
+            .awesome-btn:hover {
+                opacity: 0.8;
+            }
+            .awesome-red {
+                background: var(--color-red);
+            }
+            .awesome-green {
+                background: var(--color-green);
+            }
+        </style>
 
+        <div class="component-container" style="margin-top: 100px;">
+            <div class="component-buttons">
+                <div class="awesome-btn awesome-green">+</div>
+                <div class="awesome-btn awesome-red">-</div>
+            </div>
             <aside>
-                <svg xmlns="http://www.w3.org/2000/svg" height="512pt" viewBox="0 -25 512 512" width="512pt">
-                    <path
-                        d="m164.527344 295.195312h292.390625l49.082031-282.390624h-192.894531v131.40625l46.621093-46.609376 21.222657 21.214844-82.851563 82.820313-82.847656-82.820313 21.21875-21.214844 46.625 46.609376v-131.40625h-173.054688l-47.011718-12.804688h-63.027344v30h59.011719l35.871093 9.769531c1.640626 9.429688 40.148438 230.996094 41.789063 240.429688l-13.695313 78.800781h389.023438v-30h-353.351562zm0 0" />
-                    <path
-                        d="m204.246094 380c-22.332032 0-40.5 18.167969-40.5 40.5s18.167968 40.5 40.5 40.5c22.332031 0 40.5-18.167969 40.5-40.5s-18.167969-40.5-40.5-40.5zm0 0" />
-                    <path
-                        d="m391.921875 380c-22.332031 0-40.5 18.167969-40.5 40.5s18.167969 40.5 40.5 40.5 40.5-18.167969 40.5-40.5-18.167969-40.5-40.5-40.5zm0 0" />
-                    <circle transform='translate(140 105)' cx="125" cy="125" r="100" fill="#aeaeae" />
-                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="100px" font-family="Arial" dy=".3em">BC</text>
+                <svg xmlns="http://www.w3.org/2000/svg" height="125pt" viewBox="0 -25 512 512" width="512pt">
+                    <path fill="#fff" d="m164.527344 295.195312h292.390625l49.082031-282.390624h-192.894531v131.40625l46.621093-46.609376 21.222657 21.214844-82.851563 82.820313-82.847656-82.820313 21.21875-21.214844 46.625 46.609376v-131.40625h-173.054688l-47.011718-12.804688h-63.027344v30h59.011719l35.871093 9.769531c1.640626 9.429688 40.148438 230.996094 41.789063 240.429688l-13.695313 78.800781h389.023438v-30h-353.351562zm0 0" />
+                    <path fill="#fff" d="m204.246094 380c-22.332032 0-40.5 18.167969-40.5 40.5s18.167968 40.5 40.5 40.5c22.332031 0 40.5-18.167969 40.5-40.5s-18.167969-40.5-40.5-40.5zm0 0" />
+                    <path fill="#fff" d="m391.921875 380c-22.332031 0-40.5 18.167969-40.5 40.5s18.167969 40.5 40.5 40.5 40.5-18.167969 40.5-40.5-18.167969-40.5-40.5-40.5zm0 0" />
+                    <circle transform='translate(355 -70)' cx="125" cy="125" r="80" fill="red" />
+                    <text class="basket-text" x="88%" y="12%" text-anchor="right" fill="white" font-size="100px" dy=".3em">
+                        0
+                    </text>
                 </svg>
             </aside>
         </div>
     </section>
-
     <section class="slide">
-        <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
-            laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
-            reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
-        </p>
+        <h2 style="margin-top: -50px;">Code representation</h2>
+        <style>
+            .code-image {
+                width: 65%;
+            }
+        </style>
+        <img src="pictures/code-1.jpg" class="cover code-image" alt="">
     </section>
 
     <section class="slide">
-        <h2>Two columns if you like</h2>
-        <div class="columns two">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </div>
+        <h2>Let's figure it out</h2>
+        <img src="pictures/figure-out.gif" alt="figure-out it" class="cover">
     </section>
 
     <section class="slide">
-        <h2>All kind of lists</h2>
+        <h2>Standart cases</h2>
         <ol>
-            <li>Simple lists are marked with bullets</li>
-            <li>Ordered lists begin with a number</li>
-            <li>You can even nest lists one inside another
-                <ul>
-                    <li>Or mix their types</li>
-                    <li>But do not go too far</li>
-                    <li>Otherwise audience will be bored</li>
-                </ul>
-            </li>
-            <li>Look, seven rows exactly!</li>
+            <li>Contrast & hover/focus status</li>
+            <li>Readability</li>
+            <li>
+                    Take care about UX by keyboard
+                    <ul>
+                        <li>Focus trap at modal</li>
+                        <li>Alternative site</li>
+                        <li>Action prononsing</li>
+                    </ul>
+                </li>
+            <li>Native is better but not important</li>
         </ol>
     </section>
 
-    <section class="slide">
-        <h2>Serious citations</h2>
-        <figure>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia.</p>
-            </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
-        </figure>
-    </section>
+    
 
     <section class="slide">
         <h2>Code samples</h2>
@@ -371,7 +390,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
-
+        $('.component-container').each((index, item) => {
+            const $item = $(item);
+            const $text = $item.find('.basket-text')
+            $item.on('click', '.awesome-red', () => $text.text(+$text.text() - 1));
+            $item.on('click','.awesome-green', () => $text.text(+$text.text() + 1));
+        })
     </script>
 </body>
 
